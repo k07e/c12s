@@ -15,6 +15,37 @@ fu s:p(p)abort
   cal a:p.add('https://tpope.io/vim/sensible.git')
   cal a:p.add('https://tpope.io/vim/sleuth.git')
   cal a:p.add('https://tpope.io/vim/surround.git')
+  cal a:p.add('kana/vim-textobj-user',{'requires':[
+    \   'Julian/vim-textobj-brace',
+    \   'Julian/vim-textobj-variable-segment',
+    \   'adolenc/vim-textobj-toplevel',
+    \   'adriaanzon/vim-textobj-matchit',
+    \   'deathlyfrantic/vim-textobj-blanklines',
+    \   'fvictorio/vim-textobj-backticks',
+    \   'glts/vim-textobj-comment',
+    \   'glts/vim-textobj-indblock',
+    \   'jceb/vim-textobj-uri',
+    \   'kana/vim-textobj-datetime',
+    \   'kana/vim-textobj-diff',
+    \   'kana/vim-textobj-entire',
+    \   'kana/vim-textobj-function',
+    \   'kana/vim-textobj-indent',
+    \   'kana/vim-textobj-lastpat',
+    \   'kana/vim-textobj-line',
+    \   'kana/vim-textobj-syntax',
+    \   'lucapette/vim-textobj-underscore',
+    \   'paulhybryant/vim-textobj-path',
+    \   'pianohacker/vim-textobj-indented-paragraph',
+    \   'reedes/vim-textobj-quote',
+    \   'rsrchboy/vim-textobj-heredocs',
+    \   'saaguero/vim-textobj-pastedtext',
+    \   'saihoooooooo/vim-textobj-space',
+    \   'sgur/vim-textobj-parameter',
+    \   'somini/vim-textobj-fold',
+    \   'thinca/vim-textobj-between',
+    \   'whatyouhide/vim-textobj-xmlattr',
+    \   ['airblade/vim-gitgutter',{'requires':'gilligan/textobj-gitgutter'}],
+    \ ]})
   cal a:p.add('mattn/vim-lexiv')
 endf
 
