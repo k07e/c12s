@@ -4,6 +4,18 @@ en
 
 fu s:p(p)abort
   cal a:p.add('kristijanhusak/vim-packager',{'type':'opt'})
+
+  " Editor
+  cal a:p.add('https://tpope.io/vim/abolish.git')
+  cal a:p.add('https://tpope.io/vim/commentary.git')
+  cal a:p.add('https://tpope.io/vim/eunuch.git')
+  cal a:p.add('https://tpope.io/vim/fugitive.git')
+  cal a:p.add('https://tpope.io/vim/repeat.git')
+  cal a:p.add('https://tpope.io/vim/rsi.git')
+  cal a:p.add('https://tpope.io/vim/sensible.git')
+  cal a:p.add('https://tpope.io/vim/sleuth.git')
+  cal a:p.add('https://tpope.io/vim/surround.git')
+  cal a:p.add('mattn/vim-lexiv')
 endf
 
 try
