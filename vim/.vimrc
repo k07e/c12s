@@ -47,6 +47,8 @@ fu s:p(p)abort
     \   ['airblade/vim-gitgutter',{'requires':'gilligan/textobj-gitgutter'}],
     \ ]})
   cal a:p.add('mattn/vim-lexiv')
+  cal a:p.add('mattn/vim-lsp-settings',{'requires':'prabirshrestha/vim-lsp'})
+  cal a:p.add('prabirshrestha/asyncomplete-lsp.vim',{'requires':'prabirshrestha/asyncomplete.vim'})
 
   " Look
   cal a:p.add('lifepillar/vim-gruvbox8')
