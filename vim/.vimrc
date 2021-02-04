@@ -55,51 +55,49 @@ fu s:p(p)abort
   cal a:p.add('itchyny/lightline.vim')
 endf
 
-fu s:s()
-  se bg=dark
-  se cul
-  se lcs=eol:↵,extends:»,nbsp:%,precedes:«,tab:»-,trail:·
-  se list
-  se ls=2
-  se nosmd
-  se nowrap
-  se nu
-  se rnu
-  se stal=2
-  se tgc
-
-  let g:gitgutter_sign_added='·'
-  let g:gitgutter_sign_modified='·'
-  let g:gitgutter_sign_removed='·'
-  let g:gitgutter_sign_removed_first_line='··'
-  let g:gitgutter_sign_removed_above_and_below='.·'
-  let g:gitgutter_sign_modified_removed='··'
-  let g:lightline={
-    \   'colorscheme':'gruvbox8',
-    \   'separator':{
-    \     'left':'',
-    \     'right':'',
-    \   },
-    \   'subseparator':{
-    \     'left':'',
-    \     'right':'',
-    \   },
-    \   'tabline_separator':{
-    \     'left':'',
-    \     'right':'',
-    \   },
-    \   'tabline_subseparator':{
-    \     'left':'',
-    \     'right':'',
-    \   },
-    \ }
-
-  colorscheme gruvbox8_hard
-endf
-
 try
   pa vim-packager
   cal packager#setup(function('s:p'))
-  cal s:s()
 cat
+  fini
 endt
+
+se bg=dark
+se cul
+se lcs=eol:↵,extends:»,nbsp:%,precedes:«,tab:»-,trail:·
+se list
+se ls=2
+se nosmd
+se nowrap
+se nu
+se rnu
+se stal=2
+se tgc
+
+let g:gitgutter_sign_added='·'
+let g:gitgutter_sign_modified='·'
+let g:gitgutter_sign_removed='·'
+let g:gitgutter_sign_removed_first_line='··'
+let g:gitgutter_sign_removed_above_and_below='.·'
+let g:gitgutter_sign_modified_removed='··'
+let g:lightline={
+  \   'colorscheme':'gruvbox8',
+  \   'separator':{
+  \     'left':'',
+  \     'right':'',
+  \   },
+  \   'subseparator':{
+  \     'left':'',
+  \     'right':'',
+  \   },
+  \   'tabline_separator':{
+  \     'left':'',
+  \     'right':'',
+  \   },
+  \   'tabline_subseparator':{
+  \     'left':'',
+  \     'right':'',
+  \   },
+  \ }
+
+colorscheme gruvbox8_hard
