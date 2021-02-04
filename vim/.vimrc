@@ -55,6 +55,13 @@ fu s:p(p)abort
   cal a:p.add('itchyny/lightline.vim')
   cal a:p.add('lifepillar/vim-gruvbox8')
   cal a:p.add('nathanaelkane/vim-indent-guides')
+  cal a:p.add('ryanoasis/vim-devicons',#{requires:[
+    \   ['preservim/nerdtree',#{requires:[
+    \     ['PhilRunninger/nerdtree-visual-selection',#{type:'opt'}],
+    \     ['Xuyuanp/nerdtree-git-plugin',#{type:'opt'}],
+    \     ['tiagofumo/vim-nerdtree-syntax-highlight',#{type:'opt'}],
+    \   ],type:'opt'}],
+    \ ],type:'opt'})
 endf
 
 fu s:i()abort
@@ -113,8 +120,19 @@ let g:which_key_map=#{
   \   t:#{
   \     name:'+toggle',
   \     p:[':se invpaste','paste'],
+  \     t:[':NERDTreeToggle','NERDTree'],
   \   },
   \ }
+
+try
+  pa vim-devicons
+  pa nerdtree
+  pa nerdtree-git-plugin
+  pa nerdtree-visual-selection
+  pa vim-nerdtree-syntax-highlight
+cat
+  fini
+endt
 
 try
   pa vim-which-key
