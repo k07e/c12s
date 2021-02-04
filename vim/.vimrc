@@ -46,6 +46,7 @@ fu s:p(p)abort
     \   'whatyouhide/vim-textobj-xmlattr',
     \   ['airblade/vim-gitgutter',#{requires:'gilligan/textobj-gitgutter'}],
     \ ]})
+  cal a:p.add('liuchengxu/vim-which-key',#{type:'opt'})
   cal a:p.add('mattn/vim-lexiv')
   cal a:p.add('mattn/vim-lsp-settings',#{requires:'prabirshrestha/vim-lsp'})
   cal a:p.add('prabirshrestha/asyncomplete-lsp.vim',#{requires:'prabirshrestha/asyncomplete.vim'})
@@ -108,3 +109,19 @@ let g:lightline=#{
   \     right:'',
   \   },
   \ }
+let g:which_key_map=#{
+  \   t:#{
+  \     name:'+toggle',
+  \     p:[':se invpaste','paste'],
+  \   },
+  \ }
+
+try
+  pa vim-which-key
+  cal which_key#register("\<Bslash>",'g:which_key_map')
+cat
+  fini
+endt
+
+nn <silent><leader> :<c-u>WhichKey '<Bslash>'<CR>
+vn <silent><leader> :<c-u>WhichKeyVisual '<Bslash>'<CR>
