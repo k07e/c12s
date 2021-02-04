@@ -3,7 +3,7 @@ if &cp
 en
 
 fu s:p(p)abort
-  cal a:p.add('kristijanhusak/vim-packager',{'type':'opt'})
+  cal a:p.add('kristijanhusak/vim-packager',#{type:'opt'})
 
   " Editor
   cal a:p.add('https://tpope.io/vim/abolish.git')
@@ -15,7 +15,7 @@ fu s:p(p)abort
   cal a:p.add('https://tpope.io/vim/sensible.git')
   cal a:p.add('https://tpope.io/vim/sleuth.git')
   cal a:p.add('https://tpope.io/vim/surround.git')
-  cal a:p.add('kana/vim-textobj-user',{'requires':[
+  cal a:p.add('kana/vim-textobj-user',#{requires:[
     \   'Julian/vim-textobj-brace',
     \   'Julian/vim-textobj-variable-segment',
     \   'adolenc/vim-textobj-toplevel',
@@ -44,11 +44,11 @@ fu s:p(p)abort
     \   'somini/vim-textobj-fold',
     \   'thinca/vim-textobj-between',
     \   'whatyouhide/vim-textobj-xmlattr',
-    \   ['airblade/vim-gitgutter',{'requires':'gilligan/textobj-gitgutter'}],
+    \   ['airblade/vim-gitgutter',#{requires:'gilligan/textobj-gitgutter'}],
     \ ]})
   cal a:p.add('mattn/vim-lexiv')
-  cal a:p.add('mattn/vim-lsp-settings',{'requires':'prabirshrestha/vim-lsp'})
-  cal a:p.add('prabirshrestha/asyncomplete-lsp.vim',{'requires':'prabirshrestha/asyncomplete.vim'})
+  cal a:p.add('mattn/vim-lsp-settings',#{requires:'prabirshrestha/vim-lsp'})
+  cal a:p.add('prabirshrestha/asyncomplete-lsp.vim',#{requires:'prabirshrestha/asyncomplete.vim'})
 
   " Look
   cal a:p.add('lifepillar/vim-gruvbox8')
@@ -85,22 +85,22 @@ let g:gitgutter_sign_removed='·'
 let g:gitgutter_sign_removed_first_line='··'
 let g:gitgutter_sign_removed_above_and_below='.·'
 let g:gitgutter_sign_modified_removed='··'
-let g:lightline={
-  \   'colorscheme':'gruvbox8',
-  \   'separator':{
-  \     'left':'',
-  \     'right':'',
+let g:lightline=#{
+  \   colorscheme:'gruvbox8',
+  \   separator:#{
+  \     left:'',
+  \     right:'',
   \   },
-  \   'subseparator':{
-  \     'left':'',
-  \     'right':'',
+  \   subseparator:#{
+  \     left:'',
+  \     right:'',
   \   },
-  \   'tabline_separator':{
-  \     'left':'',
-  \     'right':'',
+  \   tabline_separator:#{
+  \     left:'',
+  \     right:'',
   \   },
-  \   'tabline_subseparator':{
-  \     'left':'',
-  \     'right':'',
+  \   tabline_subseparator:#{
+  \     left:'',
+  \     right:'',
   \   },
   \ }
