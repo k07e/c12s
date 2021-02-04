@@ -55,6 +55,11 @@ fu s:p(p)abort
   cal a:p.add('itchyny/lightline.vim')
 endf
 
+fu s:i()abort
+  PackagerInstall #{on_finish:'qa'}
+endf
+com Install cal s:i()
+
 try
   pa vim-packager
   cal packager#setup(function('s:p'))
