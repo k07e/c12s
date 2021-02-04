@@ -51,8 +51,8 @@ fu s:p(p)abort
   cal a:p.add('prabirshrestha/asyncomplete-lsp.vim',#{requires:'prabirshrestha/asyncomplete.vim'})
 
   " Look
-  cal a:p.add('lifepillar/vim-gruvbox8')
   cal a:p.add('itchyny/lightline.vim')
+  cal a:p.add('lifepillar/vim-gruvbox8')
   cal a:p.add('nathanaelkane/vim-indent-guides')
 endf
 
