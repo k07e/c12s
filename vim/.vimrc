@@ -63,11 +63,12 @@ com Install cal s:i()
 try
   pa vim-packager
   cal packager#setup(function('s:p'))
+  se bg=dark tgc
+    \ |colorscheme gruvbox8_hard
 cat
   fini
 endt
 
-se bg=dark
 se cul
 se lcs=eol:↵,extends:»,nbsp:%,precedes:«,tab:»-,trail:·
 se list
@@ -77,7 +78,6 @@ se nowrap
 se nu
 se rnu
 se stal=2
-se tgc
 
 let g:gitgutter_sign_added='·'
 let g:gitgutter_sign_modified='·'
@@ -104,5 +104,3 @@ let g:lightline={
   \     'right':'',
   \   },
   \ }
-
-colorscheme gruvbox8_hard
