@@ -102,14 +102,4 @@ try
   cal packager#setup(function('s:p'))
   cal s:s()
 cat
-  if executable('git')&&!isdirectory(expand('~/.vim/pack/packager/opt/vim-packager'))
-    ec 'installing vim-packager ...'
-    ec system('git clone -q https://github.com/kristijanhusak/vim-packager.git ~/.vim/pack/packager/opt/vim-packager')
-    ec 'done'
-    cal feedkeys(' ')
-    pa vim-packager
-    cal packager#setup(function('s:p'))
-    PackagerInstall {'on_finish':'q'}
-    cal s:s()
-  en
 endt
