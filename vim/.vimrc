@@ -53,6 +53,7 @@ fu s:p(p)abort
   " Look
   cal a:p.add('lifepillar/vim-gruvbox8')
   cal a:p.add('itchyny/lightline.vim')
+  cal a:p.add('nathanaelkane/vim-indent-guides')
 endf
 
 fu s:i()abort
@@ -85,6 +86,9 @@ let g:gitgutter_sign_removed='·'
 let g:gitgutter_sign_removed_first_line='··'
 let g:gitgutter_sign_removed_above_and_below='.·'
 let g:gitgutter_sign_modified_removed='··'
+let g:indent_guides_enable_on_vim_startup=1
+let g:indent_guides_guide_size=1
+let g:indent_guides_start_level=2
 let g:lightline=#{
   \   colorscheme:'gruvbox8',
   \   separator:#{
