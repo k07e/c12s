@@ -120,6 +120,11 @@ let g:lightline=#{
   \ }
 let g:undotree_WindowLayout=3
 let g:which_key_map=#{
+  \   f:#{
+  \     name:'+focus',
+  \     n:[':NERDTreeFocus','NERDTree'],
+  \     u:[':UndotreeFocus','Undotree'],
+  \   },
   \   t:#{
   \     name:'+toggle',
   \     p:[':se invpaste','paste'],
