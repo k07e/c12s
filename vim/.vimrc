@@ -49,6 +49,7 @@ fu s:p(p)abort
   cal a:p.add('liuchengxu/vim-which-key',#{type:'opt'})
   cal a:p.add('mattn/vim-lexiv')
   cal a:p.add('mattn/vim-lsp-settings',#{requires:'prabirshrestha/vim-lsp'})
+  cal a:p.add('mbbill/undotree')
   cal a:p.add('prabirshrestha/asyncomplete-lsp.vim',#{requires:'prabirshrestha/asyncomplete.vim'})
 
   " Look
@@ -116,11 +117,13 @@ let g:lightline=#{
   \     right:'',
   \   },
   \ }
+let g:undotree_WindowLayout=3
 let g:which_key_map=#{
   \   t:#{
   \     name:'+toggle',
   \     p:[':se invpaste','paste'],
   \     t:[':NERDTreeToggle','NERDTree'],
+  \     u:[':UndotreeToggle','Undotree'],
   \   },
   \ }
 
