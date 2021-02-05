@@ -53,6 +53,7 @@ fu s:p(p)abort
   cal a:p.add('mattn/vim-lsp-settings',#{requires:'prabirshrestha/vim-lsp'})
   cal a:p.add('mbbill/undotree')
   cal a:p.add('prabirshrestha/asyncomplete-lsp.vim',#{requires:'prabirshrestha/asyncomplete.vim'})
+  cal a:p.add('voldikss/vim-floaterm')
 
   " Look
   cal a:p.add('itchyny/lightline.vim')
@@ -99,6 +100,7 @@ fu LightlineComponent_autosave()
   retu exists('g:auto_save')&&g:auto_save?'AUTOSAVE':''
 endf
 
+let g:floaterm_keymap_toggle='\tf'
 let g:gitgutter_sign_added='·'
 let g:gitgutter_sign_modified='·'
 let g:gitgutter_sign_removed='·'
@@ -147,6 +149,7 @@ let g:which_key_map=#{
   \   t:#{
   \     name:'+toggle',
   \     a:[':AutoSaveToggle','AutoSave'],
+  \     f:[':FloatermToggle','floaterm'],
   \     g:[':Goyo','Goyo'],
   \     l:[':Limelight!!','Limelight'],
   \     p:[':se invpaste','paste'],
