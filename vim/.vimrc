@@ -83,6 +83,7 @@ se cul
 se lcs=eol:↵,extends:»,nbsp:%,precedes:«,tab:»-,trail:·
 se list
 se ls=2
+se mouse=a
 se nosmd
 se nowrap
 se nu
