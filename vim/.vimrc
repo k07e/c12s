@@ -69,6 +69,9 @@ fu s:p(p)abort
     \     ['tiagofumo/vim-nerdtree-syntax-highlight',#{type:'opt'}],
     \   ],type:'opt'}],
     \ ],type:'opt'})
+
+  " Misc
+  cal a:p.add('lambdalisue/battery.vim')
 endf
 
 fu s:i()abort
@@ -113,10 +116,12 @@ let g:indent_guides_start_level=2
 let g:lightline=#{
   \   active:#{
   \     left:[['mode','autosave','paste'],['readonly','filename','modified']],
+  \     right:[['lineinfo'],['percent'],['filetype','fileformat','fileencoding','battery']],
   \   },
   \   colorscheme:'gruvbox8',
   \   component_function:#{
   \     autosave:'LightlineComponent_autosave',
+  \     battery:'battery#component',
   \   },
   \   separator:#{
   \     left:'',
