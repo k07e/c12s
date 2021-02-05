@@ -116,9 +116,12 @@ let g:indent_guides_start_level=2
 let g:lightline=#{
   \   active:#{
   \     left:[['mode','autosave','paste'],['readonly','filename','modified']],
-  \     right:[['lineinfo'],['percent'],['filetype','fileformat','fileencoding','battery']],
+  \     right:[['lineinfo'],['percent'],['filetype','fileformat','fileencoding','battery','clock']],
   \   },
   \   colorscheme:'gruvbox8',
+  \   component:#{
+  \     clock:'%{strftime(''%H:%M'')}',
+  \   },
   \   component_function:#{
   \     autosave:'LightlineComponent_autosave',
   \     battery:'battery#component',
