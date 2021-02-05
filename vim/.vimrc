@@ -6,6 +6,7 @@ fu s:p(p)abort
   cal a:p.add('kristijanhusak/vim-packager',#{type:'opt'})
 
   " Editor
+  cal a:p.add('907th/vim-auto-save')
   cal a:p.add('https://tpope.io/vim/abolish.git')
   cal a:p.add('https://tpope.io/vim/commentary.git')
   cal a:p.add('https://tpope.io/vim/eunuch.git')
@@ -93,6 +94,10 @@ se nu
 se rnu
 se stal=2
 
+fu LightlineComponent_autosave()
+  retu exists('g:auto_save')&&g:auto_save?'AUTOSAVE':''
+endf
+
 let g:gitgutter_sign_added='·'
 let g:gitgutter_sign_modified='·'
 let g:gitgutter_sign_removed='·'
@@ -103,7 +108,13 @@ let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_guide_size=1
 let g:indent_guides_start_level=2
 let g:lightline=#{
+  \   active:#{
+  \     left:[['mode','autosave','paste'],['readonly','filename','modified']],
+  \   },
   \   colorscheme:'gruvbox8',
+  \   component_function:#{
+  \     autosave:'LightlineComponent_autosave',
+  \   },
   \   separator:#{
   \     left:'',
   \     right:'',
@@ -134,6 +145,7 @@ let g:which_key_map=#{
   \   },
   \   t:#{
   \     name:'+toggle',
+  \     a:[':AutoSaveToggle','AutoSave'],
   \     g:[':Goyo','Goyo'],
   \     l:[':Limelight!!','Limelight'],
   \     p:[':se invpaste','paste'],
