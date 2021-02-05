@@ -54,6 +54,9 @@ fu s:p(p)abort
 
   " Look
   cal a:p.add('itchyny/lightline.vim')
+  cal a:p.add('junegunn/limelight.vim',#{requires:[
+    \   ['junegunn/goyo.vim',#{type:'opt'}],
+    \ ],type:'opt'})
   cal a:p.add('lifepillar/vim-gruvbox8')
   cal a:p.add('nathanaelkane/vim-indent-guides')
   cal a:p.add('ryanoasis/vim-devicons',#{requires:[
@@ -131,11 +134,25 @@ let g:which_key_map=#{
   \   },
   \   t:#{
   \     name:'+toggle',
+  \     g:[':Goyo','Goyo'],
+  \     l:[':Limelight!!','Limelight'],
   \     p:[':se invpaste','paste'],
   \     t:[':NERDTreeToggle','NERDTree'],
   \     u:[':UndotreeToggle','Undotree'],
   \   },
   \ }
+
+try
+  pa limelight.vim
+  pa goyo.vim
+  aug vimrc_limelight
+    au!
+    au User GoyoEnter Limelight
+    au User GoyoLeave Limelight!
+  aug END
+cat
+  fini
+endt
 
 try
   pa vim-devicons
