@@ -9,12 +9,12 @@ fu s:p(p)abort
   cal a:p.add('https://tpope.io/vim/abolish.git')
   cal a:p.add('https://tpope.io/vim/commentary.git')
   cal a:p.add('https://tpope.io/vim/eunuch.git')
-  cal a:p.add('https://tpope.io/vim/fugitive.git')
   cal a:p.add('https://tpope.io/vim/repeat.git')
   cal a:p.add('https://tpope.io/vim/rsi.git')
   cal a:p.add('https://tpope.io/vim/sensible.git')
   cal a:p.add('https://tpope.io/vim/sleuth.git')
   cal a:p.add('https://tpope.io/vim/surround.git')
+  cal a:p.add('junegunn/gv.vim',#{requires:'https://tpope.io/vim/fugitive.git'})
   cal a:p.add('kana/vim-textobj-user',#{requires:[
     \   'Julian/vim-textobj-brace',
     \   'Julian/vim-textobj-variable-segment',
@@ -124,6 +124,10 @@ let g:which_key_map=#{
   \     name:'+focus',
   \     n:[':NERDTreeFocus','NERDTree'],
   \     u:[':UndotreeFocus','Undotree'],
+  \   },
+  \   o:#{
+  \     name:'+open',
+  \     g:[':GV','GV'],
   \   },
   \   t:#{
   \     name:'+toggle',
