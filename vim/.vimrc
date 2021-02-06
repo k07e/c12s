@@ -131,6 +131,10 @@ fu LightlineComponent_autosave()
   retu exists('g:auto_save')&&g:auto_save?'AUTOSAVE':''
 endf
 
+fu ToggleBGColor()
+  let &bg=&bg=='dark'?'light':'dark'
+endf
+
 let g:floaterm_keymap_toggle='\tf'
 let g:gitgutter_sign_added='·'
 let g:gitgutter_sign_modified='·'
@@ -189,6 +193,7 @@ let g:which_key_map=#{
   \   t:#{
   \     name:'+toggle',
   \     a:[':AutoSaveToggle','AutoSave'],
+  \     b:['ToggleBGColor()','bgcolor'],
   \     f:[':FloatermToggle','floaterm'],
   \     g:[':Goyo','Goyo'],
   \     l:[':Limelight!!','Limelight'],
