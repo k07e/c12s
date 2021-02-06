@@ -76,6 +76,7 @@ fu s:p(p)abort
   cal a:p.add('lifepillar/vim-gruvbox8')
   cal a:p.add('nathanaelkane/vim-indent-guides')
   cal a:p.add('ryanoasis/vim-devicons',#{requires:[
+    \   ['mhinz/vim-startify',#{type:'opt'}],
     \   ['preservim/nerdtree',#{requires:[
     \     ['PhilRunninger/nerdtree-visual-selection',#{type:'opt'}],
     \     ['Xuyuanp/nerdtree-git-plugin',#{type:'opt'}],
@@ -135,6 +136,10 @@ fu LightlineComponent_autosave()
   retu exists('g:auto_save')&&g:auto_save?'AUTOSAVE':''
 endf
 
+fu StartifyEntryFormat()
+  retu 'WebDevIconsGetFileTypeSymbol(absolute_path).'' ''.entry_path'
+endf
+
 fu ToggleBGColor()
   let &bg=&bg=='dark'?'light':'dark'
 endf
@@ -147,6 +152,7 @@ let g:gitgutter_sign_removed_first_line='··'
 let g:gitgutter_sign_removed_above_and_below='.·'
 let g:gitgutter_sign_modified_removed='··'
 let g:indent_guides_enable_on_vim_startup=1
+let g:indent_guides_exclude_filetypes=['help','startify']
 let g:indent_guides_guide_size=1
 let g:indent_guides_start_level=2
 let g:lightline=#{
@@ -203,6 +209,7 @@ let g:which_key_map=#{
   \   e:#{
   \     name:'+eval',
   \     g:[':GV','GV'],
+  \     s:[':Startify','startify'],
   \   },
   \   f:#{
   \     name:'+focus',
@@ -243,6 +250,7 @@ try
   pa nerdtree-git-plugin
   pa nerdtree-visual-selection
   pa vim-nerdtree-syntax-highlight
+  pa vim-startify
 cat
   fini
 endt
