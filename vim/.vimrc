@@ -59,6 +59,7 @@ fu s:p(p)abort
   cal a:p.add('mbbill/undotree')
   cal a:p.add('prabirshrestha/asyncomplete-lsp.vim',#{requires:'prabirshrestha/asyncomplete.vim'})
   cal a:p.add('simeji/winresizer')
+  cal a:p.add('vim-jp/vimdoc-ja')
   cal a:p.add('voldikss/vim-floaterm')
   cal a:p.add('xolox/vim-session',#{requires:'xolox/vim-misc'})
 
@@ -117,6 +118,7 @@ cat
 endt
 
 se cul
+se hlg=ja,en
 se lcs=eol:↵,extends:»,nbsp:%,precedes:«,tab:»-,trail:·
 se list
 se ls=2
