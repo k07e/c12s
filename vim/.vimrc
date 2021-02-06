@@ -57,6 +57,7 @@ fu s:p(p)abort
 
   " Look
   cal a:p.add('itchyny/lightline.vim',#{requires:[
+    \ 'lambdalisue/battery.vim',
     \ 'sinetoami/lightline-hunks',
     \ ]})
   cal a:p.add('junegunn/limelight.vim',#{requires:[
@@ -71,9 +72,6 @@ fu s:p(p)abort
     \     ['tiagofumo/vim-nerdtree-syntax-highlight',#{type:'opt'}],
     \   ],type:'opt'}],
     \ ],type:'opt'})
-
-  " Misc
-  cal a:p.add('lambdalisue/battery.vim')
 endf
 
 fu s:i()abort
