@@ -177,14 +177,14 @@ let g:session_autosave='yes'
 let g:session_directory=s:c..'/sessions'
 let g:undotree_WindowLayout=3
 let g:which_key_map=#{
+  \   e:#{
+  \     name:'+eval',
+  \     g:[':GV','GV'],
+  \   },
   \   f:#{
   \     name:'+focus',
   \     n:[':NERDTreeFocus','NERDTree'],
   \     u:[':UndotreeFocus','Undotree'],
-  \   },
-  \   o:#{
-  \     name:'+open',
-  \     g:[':GV','GV'],
   \   },
   \   t:#{
   \     name:'+toggle',
@@ -197,8 +197,8 @@ let g:which_key_map=#{
   \     u:[':UndotreeToggle','Undotree'],
   \   },
   \ }
-let g:which_key_map.o.w='winresizer'
-let g:winresizer_start_key='<Bslash>ow'
+let g:which_key_map.e.w='winresizer'
+let g:winresizer_start_key='<Bslash>ew'
 
 try
   pa limelight.vim
