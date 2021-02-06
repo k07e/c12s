@@ -2,6 +2,11 @@ if &cp
   se nocp
 en
 
+let s:c=fnamemodify(resolve(expand('<sfile>:p')),':h:h')..'/.cache/vim'
+if !isdirectory(s:c)
+  cal mkdir(s:c,'p')
+en
+
 fu s:p(p)abort
   cal a:p.add('kristijanhusak/vim-packager',#{type:'opt'})
 
@@ -73,6 +78,27 @@ fu s:p(p)abort
     \   ],type:'opt'}],
     \ ],type:'opt'})
 endf
+
+let s:bdir=s:c..'/backups'
+if !isdirectory(s:bdir)
+  cal mkdir(s:bdir)
+en
+let s:sdir=s:c..'/swaps'
+if !isdirectory(s:sdir)
+  cal mkdir(s:sdir)
+en
+let s:udir=s:c..'/undos'
+if !isdirectory(s:udir)
+  cal mkdir(s:udir)
+en
+let &bdir=s:bdir
+let &dir=s:sdir
+let &udir=s:udir
+let &vi=s:c..'/viminfo'
+
+se bk
+se swf
+se udf
 
 fu s:i()abort
   PackagerInstall #{on_finish:'qa'}
