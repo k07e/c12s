@@ -193,7 +193,7 @@ let g:which_key_map=#{
   \     g:[':Goyo','Goyo'],
   \     l:[':Limelight!!','Limelight'],
   \     p:[':se invpaste','paste'],
-  \     s:[':cal lightline#toggle()','lightline'],
+  \     s:['lightline#toggle()','lightline'],
   \     t:[':NERDTreeToggle','NERDTree'],
   \     u:[':UndotreeToggle','Undotree'],
   \   },
