@@ -157,7 +157,7 @@ let g:lightline=#{
   \   colorscheme:'gruvbox8',
   \   component:#{
   \     clock:'%{strftime(''%H:%M'')}',
-  \     user:$USER.'@'.system('hostname -s|xargs printf'),
+  \     user:system('whoami|xargs printf').'@'.system('hostname -s|xargs printf'),
   \   },
   \   component_function:#{
   \     autosave:'LightlineComponent_autosave',
