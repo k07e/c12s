@@ -13,6 +13,7 @@ fu s:p(p)abort
 
   " Editor
   cal a:p.add('907th/vim-auto-save')
+  cal a:p.add('editorconfig/editorconfig-vim')
   cal a:p.add('hrsh7th/vim-vsnip-integ',#{requires:'hrsh7th/vim-vsnip'})
   cal a:p.add('https://tpope.io/vim/abolish.git')
   cal a:p.add('https://tpope.io/vim/commentary.git')
