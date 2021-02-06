@@ -56,7 +56,9 @@ fu s:p(p)abort
   cal a:p.add('voldikss/vim-floaterm')
 
   " Look
-  cal a:p.add('itchyny/lightline.vim')
+  cal a:p.add('itchyny/lightline.vim',#{requires:[
+    \ 'sinetoami/lightline-hunks',
+    \ ]})
   cal a:p.add('junegunn/limelight.vim',#{requires:[
     \   ['junegunn/goyo.vim',#{type:'opt'}],
     \ ],type:'opt'})
@@ -115,7 +117,7 @@ let g:indent_guides_guide_size=1
 let g:indent_guides_start_level=2
 let g:lightline=#{
   \   active:#{
-  \     left:[['mode','autosave','paste'],['readonly','filename','modified']],
+  \     left:[['mode','autosave','paste'],['lightline_hunks','readonly','filename','modified']],
   \     right:[['lineinfo'],['percent'],['filetype','fileformat','fileencoding','battery','clock']],
   \   },
   \   colorscheme:'gruvbox8',
@@ -125,6 +127,7 @@ let g:lightline=#{
   \   component_function:#{
   \     autosave:'LightlineComponent_autosave',
   \     battery:'battery#component',
+  \     lightline_hunks:'lightline#hunks#composer',
   \   },
   \   separator:#{
   \     left:'',
