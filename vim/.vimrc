@@ -62,6 +62,7 @@ fu s:p(p)abort
   cal a:p.add('mattn/vim-lsp-settings',#{requires:'prabirshrestha/vim-lsp'})
   cal a:p.add('mbbill/undotree')
   cal a:p.add('prabirshrestha/asyncomplete-lsp.vim',#{requires:'prabirshrestha/asyncomplete.vim'})
+  cal a:p.add('sheerun/vim-polyglot')
   cal a:p.add('simeji/winresizer')
   cal a:p.add('vim-jp/vimdoc-ja')
   cal a:p.add('voldikss/vim-floaterm')
