@@ -22,6 +22,7 @@ fu s:p(p)abort
   cal a:p.add('https://tpope.io/vim/sleuth.git')
   cal a:p.add('https://tpope.io/vim/surround.git')
   cal a:p.add('junegunn/gv.vim',#{requires:'https://tpope.io/vim/fugitive.git'})
+  cal a:p.add('justinmk/vim-sneak')
   cal a:p.add('kana/vim-textobj-user',#{requires:[
     \   'Julian/vim-textobj-brace',
     \   'Julian/vim-textobj-variable-segment',
@@ -195,6 +196,7 @@ let g:lightline=#{
 let g:session_autoload='yes'
 let g:session_autosave='yes'
 let g:session_directory=s:c..'/sessions'
+let g:sneak#label=1
 let g:undotree_WindowLayout=3
 let g:which_key_map=#{
   \   e:#{
