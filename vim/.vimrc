@@ -150,11 +150,12 @@ let g:indent_guides_start_level=2
 let g:lightline=#{
   \   active:#{
   \     left:[['mode','autosave','paste'],['lightline_hunks','readonly','filename','modified']],
-  \     right:[['lineinfo'],['percent'],['filetype','fileformat','fileencoding','battery','clock']],
+  \     right:[['lineinfo'],['percent'],['user','filetype','fileformat','fileencoding','battery','clock']],
   \   },
   \   colorscheme:'gruvbox8',
   \   component:#{
   \     clock:'%{strftime(''%H:%M'')}',
+  \     user:$USER.'@'.system('hostname -s|xargs printf'),
   \   },
   \   component_function:#{
   \     autosave:'LightlineComponent_autosave',
