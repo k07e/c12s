@@ -23,6 +23,7 @@ fu s:p(p)abort
   cal a:p.add('https://tpope.io/vim/sleuth.git')
   cal a:p.add('https://tpope.io/vim/surround.git')
   cal a:p.add('junegunn/gv.vim',#{requires:'https://tpope.io/vim/fugitive.git'})
+  cal a:p.add('junegunn/vim-easy-align')
   cal a:p.add('justinmk/vim-sneak')
   cal a:p.add('kana/vim-textobj-user',#{requires:[
     \   'Julian/vim-textobj-brace',
@@ -262,5 +263,7 @@ cat
   fini
 endt
 
+nm ga <Plug>(EasyAlign)
 nn <silent><leader> :<c-u>WhichKey '<Bslash>'<CR>
 vn <silent><leader> :<c-u>WhichKeyVisual '<Bslash>'<CR>
+xm ga <Plug>(EasyAlign)
