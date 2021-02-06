@@ -58,7 +58,9 @@ fu s:p(p)abort
   cal a:p.add('mattn/vim-lsp-settings',#{requires:'prabirshrestha/vim-lsp'})
   cal a:p.add('mbbill/undotree')
   cal a:p.add('prabirshrestha/asyncomplete-lsp.vim',#{requires:'prabirshrestha/asyncomplete.vim'})
+  cal a:p.add('simeji/winresizer')
   cal a:p.add('voldikss/vim-floaterm')
+  cal a:p.add('xolox/vim-session',#{requires:'xolox/vim-misc'})
 
   " Look
   cal a:p.add('itchyny/lightline.vim',#{requires:[
@@ -170,6 +172,9 @@ let g:lightline=#{
   \     right:'',
   \   },
   \ }
+let g:session_autoload='yes'
+let g:session_autosave='yes'
+let g:session_directory=s:c..'/sessions'
 let g:undotree_WindowLayout=3
 let g:which_key_map=#{
   \   f:#{
@@ -192,6 +197,8 @@ let g:which_key_map=#{
   \     u:[':UndotreeToggle','Undotree'],
   \   },
   \ }
+let g:which_key_map.o.w='winresizer'
+let g:winresizer_start_key='<Bslash>ow'
 
 try
   pa limelight.vim
