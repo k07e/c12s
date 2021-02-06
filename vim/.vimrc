@@ -8,6 +8,7 @@ if !isdirectory(s:c)
 en
 
 fu s:p(p)abort
+  cal a:p.add('k07e/c12s',#{type:'opt'})
   cal a:p.add('kristijanhusak/vim-packager',#{type:'opt'})
 
   " Editor
