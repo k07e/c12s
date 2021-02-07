@@ -12,3 +12,8 @@ declare ZPFX="${cachedir}/zinit/polaris"
 . "${cachedir}/zinit/bin/zinit.zsh"
 autoload -Uz _zinit
 ((${+_comps}))&&_comps[zinit]=_zinit
+
+zinit ice depth=1;zinit light romkatv/powerlevel10k
+zinit light zdharma/fast-syntax-highlighting
+
+. "${ZDOTDIR}/.p10k.zsh"
