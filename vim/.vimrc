@@ -87,6 +87,9 @@ fu s:p(p)abort
     \     ['tiagofumo/vim-nerdtree-syntax-highlight',#{type:'opt'}],
     \   ],type:'opt'}],
     \ ],type:'opt'})
+
+  " Misc
+  cal a:p.add('xolox/vim-notes')
 endf
 
 let s:bdir=s:c..'/backups'
@@ -156,7 +159,7 @@ let g:gitgutter_sign_removed_first_line='··'
 let g:gitgutter_sign_removed_above_and_below='.·'
 let g:gitgutter_sign_modified_removed='··'
 let g:indent_guides_enable_on_vim_startup=1
-let g:indent_guides_exclude_filetypes=['help','startify']
+let g:indent_guides_exclude_filetypes=['help','notes','startify']
 let g:indent_guides_guide_size=1
 let g:indent_guides_start_level=2
 let g:lightline=#{
@@ -204,6 +207,7 @@ let g:lightline=#{
   \     right:'',
   \   },
   \ }
+let g:notes_directories=[s:c..'/misc/notes/user']
 let g:session_autoload='yes'
 let g:session_autosave='yes'
 let g:session_directory=s:c..'/sessions'
