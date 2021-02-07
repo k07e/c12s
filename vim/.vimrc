@@ -235,9 +235,13 @@ let g:which_key_map=#{
   \     t:[':NERDTreeToggle','NERDTree'],
   \     u:[':UndotreeToggle','Undotree'],
   \   },
+  \   w:#{
+  \     name:'+window',
+  \     c:[':Clap windows','clap'],
+  \   },
   \ }
-let g:which_key_map.e.w='winresizer'
-let g:winresizer_start_key='<Bslash>ew'
+let g:which_key_map.w.r='Resize'
+let g:winresizer_start_key='<Bslash>wr'
 
 try
   pa limelight.vim
