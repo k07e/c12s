@@ -2,7 +2,8 @@ if &cp
   se nocp
 en
 
-let s:c=fnamemodify(resolve(expand('<sfile>:p')),':h:h')..'/.cache/vim'
+let s:r=fnamemodify(resolve(expand('<sfile>:p')),':h:h')
+let s:c=s:r..'/.cache/vim'
 if !isdirectory(s:c)
   cal mkdir(s:c,'p')
 en
@@ -326,3 +327,8 @@ aug vimrc
   au!
   au VimEnter * cal vista#RunForNearestMethodOrFunction()
 aug END
+
+if executable('zsh')
+  let &sh=system('which zsh|xargs printf')
+  let $ZDOTDIR=s:r..'/zsh'
+en
