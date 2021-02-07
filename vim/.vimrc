@@ -166,7 +166,9 @@ fu ToggleBGColor()
   let &bg=&bg=='dark'?'light':'dark'
 endf
 
+let g:floaterm_height=0.8
 let g:floaterm_keymap_toggle='\tt'
+let g:floaterm_width=0.8
 let g:gitgutter_sign_added='·'
 let g:gitgutter_sign_modified='·'
 let g:gitgutter_sign_removed='·'
