@@ -58,6 +58,7 @@ fu s:p(p)abort
     \   ['airblade/vim-gitgutter',#{requires:'gilligan/textobj-gitgutter'}],
     \ ]})
   cal a:p.add('liuchengxu/vim-which-key',#{type:'opt'})
+  cal a:p.add('liuchengxu/vista.vim')
   cal a:p.add('mattn/vim-lexiv')
   cal a:p.add('mattn/vim-lsp-settings',#{requires:'prabirshrestha/vim-lsp'})
   cal a:p.add('mbbill/undotree')
@@ -148,6 +149,10 @@ fu LightlineComponent_autosave()
   retu exists('g:auto_save')&&g:auto_save?'AUTOSAVE':''
 endf
 
+fu NearestMethodOrFunction()abort
+  retu get(b:,'vista_nearest_method_or_function','')
+endf
+
 fu StartifyEntryFormat()
   retu 'WebDevIconsGetFileTypeSymbol(absolute_path).'' ''.entry_path'
 endf
@@ -169,7 +174,7 @@ let g:indent_guides_guide_size=1
 let g:indent_guides_start_level=2
 let g:lightline=#{
   \   active:#{
-  \     left:[['mode','autosave','paste'],['lightline_hunks','readonly','filename','modified']],
+  \     left:[['mode','autosave','paste'],['lightline_hunks','readonly','filename','modified','method']],
   \     right:[['lineinfo'],['percent'],['user','filetype','fileformat','fileencoding','battery','clock']],
   \   },
   \   colorscheme:'photon',
@@ -181,6 +186,7 @@ let g:lightline=#{
   \     autosave:'LightlineComponent_autosave',
   \     battery:'battery#component',
   \     lightline_hunks:'lightline#hunks#composer',
+  \     method:'NearestMethodOrFunction',
   \   },
   \   mode_map:{
   \     "\<C-s>":'S-B',
@@ -243,6 +249,7 @@ let g:which_key_map=#{
   \     s:['lightline#toggle()','lightline'],
   \     t:[':NERDTreeToggle','NERDTree'],
   \     u:[':UndotreeToggle','Undotree'],
+  \     v:[':Vista!!','vista'],
   \   },
   \   w:#{
   \     name:'+window',
@@ -287,3 +294,8 @@ nm ga <Plug>(EasyAlign)
 nn <silent><leader> :<c-u>WhichKey '<Bslash>'<CR>
 vn <silent><leader> :<c-u>WhichKeyVisual '<Bslash>'<CR>
 xm ga <Plug>(EasyAlign)
+
+aug vimrc
+  au!
+  au VimEnter * cal vista#RunForNearestMethodOrFunction()
+aug END
