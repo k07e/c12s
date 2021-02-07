@@ -69,6 +69,7 @@ fu s:p(p)abort
   cal a:p.add('xolox/vim-session',#{requires:'xolox/vim-misc'})
 
   " Look
+  cal a:p.add('NLKNguyen/papercolor-theme')
   cal a:p.add('axvr/photon.vim')
   cal a:p.add('itchyny/lightline.vim',#{requires:[
     \ 'lambdalisue/battery.vim',
