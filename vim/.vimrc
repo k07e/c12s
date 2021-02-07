@@ -79,6 +79,7 @@ fu s:p(p)abort
   cal a:p.add('lifepillar/vim-gruvbox8')
   cal a:p.add('nathanaelkane/vim-indent-guides')
   cal a:p.add('ryanoasis/vim-devicons',#{requires:[
+    \   ['liuchengxu/vim-clap',#{do:{->clap#installer#force_download()},type:'opt'}],
     \   ['mhinz/vim-startify',#{type:'opt'}],
     \   ['preservim/nerdtree',#{requires:[
     \     ['PhilRunninger/nerdtree-visual-selection',#{type:'opt'}],
@@ -211,6 +212,9 @@ let g:undotree_WindowLayout=3
 let g:which_key_map=#{
   \   e:#{
   \     name:'+eval',
+  \     c:[':Clap','clap'],
+  \     b:[':Clap buffers','buffers'],
+  \     f:[':Clap files','files'],
   \     g:[':GV','GV'],
   \     s:[':Startify','startify'],
   \   },
@@ -249,6 +253,7 @@ endt
 
 try
   pa vim-devicons
+  pa vim-clap
   pa nerdtree
   pa nerdtree-git-plugin
   pa nerdtree-visual-selection
