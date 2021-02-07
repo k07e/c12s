@@ -165,7 +165,7 @@ fu ToggleBGColor()
   let &bg=&bg=='dark'?'light':'dark'
 endf
 
-let g:floaterm_keymap_toggle='\tf'
+let g:floaterm_keymap_toggle='\tt'
 let g:gitgutter_sign_added='·'
 let g:gitgutter_sign_modified='·'
 let g:gitgutter_sign_removed='·'
@@ -229,35 +229,58 @@ let g:session_directory=s:c..'/sessions'
 let g:sneak#label=1
 let g:undotree_WindowLayout=3
 let g:which_key_map=#{
-  \   e:#{
-  \     name:'+eval',
-  \     c:[':Clap','clap'],
-  \     b:[':Clap buffers','buffers'],
-  \     f:[':Clap files','files'],
-  \     g:[':GV','GV'],
-  \     s:[':Startify','startify'],
+  \   b:#{
+  \     name:'+buffer',
+  \     c:[':Clap bcommits','commits'],
+  \     l:[':Clap blines','lines'],
+  \     z:[':Clap buffers','buffers'],
+  \   },
+  \   c:#{
+  \     name:'+command',
+  \     h:[':Clap command_history','history'],
+  \     z:[':Clap command','clap'],
   \   },
   \   f:#{
   \     name:'+focus',
   \     n:[':NERDTreeFocus','NERDTree'],
   \     u:[':UndotreeFocus','Undotree'],
   \   },
+  \   g:#{
+  \     name:'+git',
+  \     c:[':Clap commits','commits'],
+  \     d:[':Clap git_diff_files','diff'],
+  \     f:[':Clap gfiles','files'],
+  \     v:[':GV','view'],
+  \   },
+  \   o:#{
+  \     name:'+open',
+  \     c:[':Calendar','calendar'],
+  \     s:[':Startify','startify'],
+  \     z:[':Clap','clap'],
+  \   },
   \   t:#{
   \     name:'+toggle',
   \     a:[':AutoSaveToggle','AutoSave'],
   \     b:['ToggleBGColor()','bgcolor'],
-  \     f:[':FloatermToggle','floaterm'],
   \     g:[':Goyo','Goyo'],
+  \     i:[':IndentGuidesToggle','Indent Guides'],
   \     l:[':Limelight!!','Limelight'],
+  \     n:[':NERDTreeToggle','NERDTree'],
   \     p:[':se invpaste','paste'],
   \     s:['lightline#toggle()','lightline'],
-  \     t:[':NERDTreeToggle','NERDTree'],
+  \     t:[':FloatermToggle','floaterm'],
   \     u:[':UndotreeToggle','Undotree'],
   \     v:[':Vista!!','vista'],
   \   },
   \   w:#{
   \     name:'+window',
-  \     c:[':Clap windows','clap'],
+  \     z:[':Clap windows','clap'],
+  \   },
+  \   z:#{
+  \     name:'+clap',
+  \     c:[':Clap colors','colors'],
+  \     f:[':Clap files','files'],
+  \     t:[':Clap floaterm','floaterm'],
   \   },
   \ }
 let g:which_key_map.w.r='Resize'
