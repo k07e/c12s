@@ -69,6 +69,7 @@ fu s:p(p)abort
   cal a:p.add('xolox/vim-session',#{requires:'xolox/vim-misc'})
 
   " Look
+  cal a:p.add('axvr/photon.vim')
   cal a:p.add('itchyny/lightline.vim',#{requires:[
     \ 'lambdalisue/battery.vim',
     \ 'sinetoami/lightline-hunks',
@@ -76,8 +77,10 @@ fu s:p(p)abort
   cal a:p.add('junegunn/limelight.vim',#{requires:[
     \   ['junegunn/goyo.vim',#{type:'opt'}],
     \ ],type:'opt'})
+  cal a:p.add('k07e/lightline-photon.vim')
   cal a:p.add('lifepillar/vim-gruvbox8')
   cal a:p.add('nathanaelkane/vim-indent-guides')
+  cal a:p.add('rakr/vim-one')
   cal a:p.add('ryanoasis/vim-devicons',#{requires:[
     \   ['liuchengxu/vim-clap',#{do:{->clap#installer#force_download()},type:'opt'}],
     \   ['mhinz/vim-startify',#{type:'opt'}],
@@ -87,6 +90,7 @@ fu s:p(p)abort
     \     ['tiagofumo/vim-nerdtree-syntax-highlight',#{type:'opt'}],
     \   ],type:'opt'}],
     \ ],type:'opt'})
+  cal a:p.add('tomasiser/vim-code-dark')
 
   " Misc
   cal a:p.add('xolox/vim-notes')
@@ -122,7 +126,7 @@ try
   pa vim-packager
   cal packager#setup(function('s:p'))
   se bg=dark tgc
-    \ |colorscheme gruvbox8_hard
+    \ |colorscheme photon
 cat
   fini
 endt
@@ -167,7 +171,7 @@ let g:lightline=#{
   \     left:[['mode','autosave','paste'],['lightline_hunks','readonly','filename','modified']],
   \     right:[['lineinfo'],['percent'],['user','filetype','fileformat','fileencoding','battery','clock']],
   \   },
-  \   colorscheme:'gruvbox8',
+  \   colorscheme:'photon',
   \   component:#{
   \     clock:'%{strftime(''%H:%M'')}',
   \     user:system('whoami|xargs printf').'@'.system('hostname -s|xargs printf'),
