@@ -98,6 +98,7 @@ fu s:p(p)abort
   cal a:p.add('tomasiser/vim-code-dark')
 
   " Misc
+  cal a:p.add('itchyny/calendar.vim')
   cal a:p.add('xolox/vim-notes')
 endf
 
@@ -172,7 +173,7 @@ let g:gitgutter_sign_removed_first_line='··'
 let g:gitgutter_sign_removed_above_and_below='.·'
 let g:gitgutter_sign_modified_removed='··'
 let g:indent_guides_enable_on_vim_startup=1
-let g:indent_guides_exclude_filetypes=['gitcommit','help','notes','startify']
+let g:indent_guides_exclude_filetypes=['calendar','gitcommit','help','notes','startify']
 let g:indent_guides_guide_size=1
 let g:indent_guides_start_level=2
 let g:lightline=#{
