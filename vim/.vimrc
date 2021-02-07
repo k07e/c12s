@@ -24,6 +24,7 @@ fu s:p(p)abort
   cal a:p.add('https://tpope.io/vim/sensible.git')
   cal a:p.add('https://tpope.io/vim/sleuth.git')
   cal a:p.add('https://tpope.io/vim/surround.git')
+  cal a:p.add('jiangmiao/auto-pairs')
   cal a:p.add('junegunn/gv.vim',#{requires:'https://tpope.io/vim/fugitive.git'})
   cal a:p.add('junegunn/vim-easy-align')
   cal a:p.add('justinmk/vim-sneak')
@@ -60,7 +61,7 @@ fu s:p(p)abort
     \ ]})
   cal a:p.add('liuchengxu/vim-which-key',#{type:'opt'})
   cal a:p.add('liuchengxu/vista.vim')
-  cal a:p.add('mattn/vim-lexiv')
+  " cal a:p.add('mattn/vim-lexiv')
   cal a:p.add('mattn/vim-lsp-settings',#{requires:'prabirshrestha/vim-lsp'})
   cal a:p.add('mbbill/undotree')
   cal a:p.add('prabirshrestha/asyncomplete-lsp.vim',#{requires:'prabirshrestha/asyncomplete.vim'})
@@ -170,7 +171,7 @@ let g:gitgutter_sign_removed_first_line='··'
 let g:gitgutter_sign_removed_above_and_below='.·'
 let g:gitgutter_sign_modified_removed='··'
 let g:indent_guides_enable_on_vim_startup=1
-let g:indent_guides_exclude_filetypes=['help','notes','startify']
+let g:indent_guides_exclude_filetypes=['gitcommit','help','notes','startify']
 let g:indent_guides_guide_size=1
 let g:indent_guides_start_level=2
 let g:lightline=#{
